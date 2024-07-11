@@ -1,9 +1,12 @@
 import Image from "next/image";
-import Logo from "@/public/assets/logo.png";
+import LogoWhite from "@/public/assets/logo-blanco.png";
+import LogoDark from "@/public/assets/logo-negro.png";
+
 import { IconMenu } from "./icons/IconMenu";
 import Switcher from "./Switcher";
 import clsx from "clsx";
 import { NavContactButton } from "./buttons/NavContactButton";
+import { IconAuto } from "./icons/IconAuto";
 
 export const Navbar = () => {
   return (
@@ -19,7 +22,10 @@ export const Navbar = () => {
       )}
     >
       <div className="flex items-center">
-        <Image src={Logo} alt="Logo" width={150} height={19} />
+        <Image className="hidden lg:block w-36" src={LogoDark} alt="Logo" priority />
+       <IconAuto className=" dark:fill-slate-100 lg:hidden fill-slate-800" />
+
+       
       </div>
       <ul className="hidden lg:flex gap-5 ">
         <li><a href="#">Inicio</a></li>
@@ -30,7 +36,7 @@ export const Navbar = () => {
       </ul>
 
       <div className="flex items-center justify-center">
-        <div className="sm:hidden">
+        <div className="hidden lg:block">
           <NavContactButton />
         </div>
 
